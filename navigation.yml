@@ -2,5 +2,7 @@
 main:
   - title: "Posts"
     url: /
+  - title: "Categories"
+    url: /categories/
   - title: "GitHub"
     url: https://github.com/diveintoive6
