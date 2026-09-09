@@ -1,1 +1,1 @@
-# diveintoive6.github.io
+# Diveintoive6 의 데이터 분석 / 데이터 엔지니어링 학습 블로그 입니다
