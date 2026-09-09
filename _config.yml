@@ -1,0 +1,21 @@
+# Site Settings
+title: "Dive's Data Analysis / Data Engineer Blog"
+name: "diveintoive6"
+description: "데이터 분석 / 데이터 엔지니어링 블로그"
+url: "https://diveintoive6.github.io"
+baseurl: "" 
+
+# Minimal Mistakes 테마 연결
+remote_theme: mmistakes/minimal-mistakes
+
+# Plugins 설정 (필수)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# 기타 설정
+minimal_mistakes_skin: "default"
+locale: "ko-KR"
