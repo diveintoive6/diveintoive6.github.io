@@ -19,3 +19,6 @@ plugins:
 # 기타 설정
 minimal_mistakes_skin: "default"
 locale: "ko-KR"
+
+# Date Format
+date_format: "%Y-%m-%d %H:%M"
