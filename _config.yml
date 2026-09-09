@@ -27,7 +27,7 @@ timezone: Asia/Seoul
 # Author Settings
 author:
   name: "diveintoive6"      # 또는 원하는 익명 닉네임
-  avatar: ""                # 프로필 사진이 없다면 비워두기 (기본 아이콘 또는 빈 화면)
+  avatar: "https://via.placeholder.com/150/000000/000000?text=+"                # 프로필 사진이 없다면 비워두기 (기본 아이콘 또는 빈 화면)
   bio: "Data Analysis & Engineering" # 간단한 한 줄 소개 (직함 대신 관심사 기록)
   location: "South Korea"
   links:
