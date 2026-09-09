@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: home
 title: "데이터 분석 / 엔지니어링 관련 내용들 모았습니다!!"
 author_profile: true
 ---
