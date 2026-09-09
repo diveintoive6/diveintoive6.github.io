@@ -22,6 +22,7 @@ locale: "ko-KR"
 
 # Date Format
 date_format: "%Y-%m-%d %H:%M"
+timezone: Asia/Seoul
 
 # Author Settings
 author:
