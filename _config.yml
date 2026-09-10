@@ -3,7 +3,7 @@ title: "Dive's Data Analysis / Data Engineer Blog"
 name: "diveintoive6"
 description: "데이터 분석 / 데이터 엔지니어링 블로그"
 url: "https://diveintoive6.github.io"
-baseurl: "" 
+baseurl: ""
 
 # Minimal Mistakes 테마 연결
 remote_theme: mmistakes/minimal-mistakes
@@ -26,9 +26,9 @@ timezone: Asia/Seoul
 
 # Author Settings
 author:
-  name: "diveintoive6"      # 또는 원하는 익명 닉네임
-  avatar: "https://via.placeholder.com/150/000000/000000?text=+"                # 프로필 사진이 없다면 비워두기 (기본 아이콘 또는 빈 화면)
-  bio: "Data Analysis & Engineering" # 간단한 한 줄 소개 (직함 대신 관심사 기록)
+  name: "diveintoive6"
+  avatar: "https://via.placeholder.com/150/000000/000000?text=+"
+  bio: "Data Analysis & Engineering"
   location: "South Korea"
   links:
     - label: "GitHub"
