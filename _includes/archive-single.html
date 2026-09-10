@@ -1,11 +1,11 @@
-<p class="archive__item-meta">
+<p class="page__meta">
   {% if post.last_modified_at %}
     <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 수정: <time datetime="{{ post.last_modified_at | date_to_xmlschema }}">{{ post.last_modified_at | date: "%Y년 %m월 %d일" }}</time>
   {% elsif post.date %}
     <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 작성: <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y년 %m월 %d일" }}</time>
   {% endif %}
 
-  {% if post.categories %}
+  {% if post.categories[0] %}
     <span class="page__meta-sep"></span>
     <i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 
     {% for category in post.categories %}
