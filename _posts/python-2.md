@@ -1,0 +1,191 @@
+---
+layout: single
+title: "파이썬 sort()와 sorted()의 차이점 및 실전 예제"
+date: 2026-02-05 20:30:00 +0900
+classes: wide
+categories: [파이썬 (Python)]
+tags: [Python, Sorting, List]
+---
+
+파이썬에서 데이터를 정렬할 때 가장 많이 헷갈리는 두 가지가 있습니다. 바로 리스트 메서드인 `.sort()`와 내장 함수인 `sorted()`입니다.
+
+핵심 차이는 **"원본을 직접 바꾸느냐 (In-place) vs 새로운 정렬 결과를 반환하느냐"**입니다. 둘의 차이점과 헷갈리기 쉬운 실전 예제를 정리해 보겠습니다.
+
+---
+
+## 1. 핵심 차이점 비교
+
+| 구분 | `list.sort()` | `sorted()` |
+| :--- | :--- | :--- |
+| **종류** | 리스트 메서드 (Method) | 파이썬 내장 함수 (Function) |
+| **원본 수정** | 원본 리스트를 직접 정렬함 (In-place) | 원본은 그대로 유지함 |
+| **반환값** | `None` | 정렬된 새로운 리스트 (`list`) |
+| **사용 대상** | **오직 리스트(List)만** 가능 | 리스트, 튜플, 문자열, 딕셔너리 등 반복 가능한 객체 |
+
+---
+
+## 2. 상세 설명과 기본 예제
+
+### 1️⃣ list.sort()
+* 리스트 자체를 변형시키며, 반환값이 `None`입니다.
+
+```python
+a = [3, 1, 2]
+a.sort()
+print(a)  # [1, 2, 3]
+
+b = a.sort()
+print(b)  # None (주의: a = a.sort()처럼 쓰면 안 됨!)
+
+```
+
+### 2️⃣ sorted()
+
+* 원본 객체는 건드리지 않고, 정렬된 **새로운 리스트**를 반환합니다.
+
+```python
+a = [3, 1, 2]
+b = sorted(a)
+
+print(a)  # [3, 1, 2] (원본 유지)
+print(b)  # [1, 2, 3] (새로운 리스트)
+
+```
+
+### 3️⃣ 사용할 수 있는 데이터 타입
+
+* `sort()`는 리스트 전용이므로 문자열이나 튜플에 쓰면 에러가 납니다.
+* `sorted()`는 순회 가능한(iterable) 모든 객체에 사용할 수 있습니다.
+
+```python
+# 문자열 정렬
+sorted("python")      # ['h', 'n', 'o', 'p', 't', 'y']
+
+# 튜플 정렬 (결과는 항상 리스트로 반환됨)
+sorted((3, 1, 2))     # [1, 2, 3]
+
+```
+
+---
+
+## 3. 공통 옵션 (reverse, key)
+
+두 방식 모두 동일한 옵션을 지원합니다.
+
+* **내림차순 정렬 (`reverse=True`)**
+
+```python
+sorted(a, reverse=True)
+a.sort(reverse=True)
+
+```
+
+* **정렬 기준 지정 (`key=...`)**
+
+```python
+# 길이를 기준으로 정렬
+sorted(words, key=len)
+words.sort(key=len)
+
+```
+
+---
+
+## 4. 헷갈리기 쉬운 실전 예제 6가지
+
+### 예제 1️⃣ 가장 흔한 실수 (변수에 다시 할당하기)
+
+```python
+scores = [90, 70, 80]
+scores = scores.sort()   # ❌ 잘못된 사용
+print(scores)            # None 출력!
+
+```
+
+* **이유:** `sort()`는 정렬만 하고 `None`을 반환하므로 `scores`가 `None`으로 덮어씌워집니다.
+* **올바른 방법:** `scores.sort()`를 단독으로 쓰거나, `scores = sorted(scores)`를 사용하세요.
+
+### 예제 2️⃣ 원본 보존이 필요한 경우
+
+```python
+prices = [3000, 1000, 2000]
+
+cheap_first = sorted(prices)
+print(prices)        # [3000, 1000, 2000] (원본 안전)
+print(cheap_first)   # [1000, 2000, 3000]
+
+```
+
+👉 로그 기록이나 원본 데이터를 유지해야 할 때는 `sorted()`가 안전합니다.
+
+### 예제 3️⃣ 리스트가 아닌 데이터 정렬
+
+```python
+data = (5, 2, 9, 1)
+
+# data.sort()           # ❌ AttributeError 발생 (튜플은 메서드 없음)
+sorted_data = sorted(data)
+print(sorted_data)    # [1, 2, 5, 9] (항상 리스트로 반환)
+
+```
+
+### 예제 4️⃣ 딕셔너리 정렬 (실무 빈출)
+
+딕셔너리는 `.sort()`를 지원하지 않으므로 `sorted()`와 `.items()`를 조합해야 합니다.
+
+```python
+scores = {
+    "철수": 80,
+    "영희": 95,
+    "민수": 70
+}
+
+# 점수(value, 즉 x[1])를 기준으로 정렬
+result = sorted(scores.items(), key=lambda x: x[1])
+print(result)
+# 출력: [('민수', 70), ('철수', 80), ('영희', 95)]
+
+```
+
+### 예제 5️⃣ 문자열 길이 기준 정렬
+
+```python
+words = ["banana", "kiwi", "apple", "fig"]
+
+words.sort(key=len)
+print(words)
+# 출력: ['fig', 'kiwi', 'apple', 'banana']
+
+```
+
+### 예제 6️⃣ 딕셔너리 리스트 정렬 (객체/JSON 형태)
+
+```python
+users = [
+    {"name": "Alice", "age": 30},
+    {"name": "Bob", "age": 25},
+    {"name": "Charlie", "age": 35}
+]
+
+# 나이(age) 순으로 정렬
+users.sort(key=lambda u: u["age"])
+
+```
+
+* 데이터가 크고 메모리를 아껴야 하며 원본을 바꿔도 될 때는 `sort()`를 쓰는 것이 유리합니다.
+
+---
+
+## 💡 기억하면 좋은 비유
+
+> * **`sort()`** ➔ 책상 위에 있는 서류를 직접 집어 순서대로 정리 (원본 변경, 제자리 정렬)
+> * **`sorted()`** ➔ 서류의 복사본을 만들어 복사본을 순서대로 정렬 후 건네줌 (새로운 리스트 반환)
+> 
+> 
+
+---
+
+## ✨ 한 줄 요약
+
+* `sort()` → 원본 리스트 직접 정렬, `None` 반환
+* `sorted()` → 새 리스트 반환, 더 범용적(`리스트 외 객체도 가능`)
