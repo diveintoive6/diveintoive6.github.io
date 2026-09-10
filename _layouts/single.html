@@ -14,8 +14,8 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main" class="wide">
-  <div class="page" style="width: 100%; margin: 0 auto; float: none;">
+<div id="main" role="main" class="wide" style="padding-left: 0 !important; margin-left: 0 !important;">
+  <div class="page" style="width: 100%; margin: 0; float: none; padding-left: 0;">
     <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
       {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
       {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -48,8 +48,8 @@ layout: default
           </header>
         {% endunless %}
 
-        <!-- 실제 본문 내용 영역 -->
-        <section class="page__content" itemprop="text">
+        <!-- 실제 본문 내용 영역 (글자 크기 축소 적용) -->
+        <section class="page__content" itemprop="text" style="font-size: 0.9em; line-height: 1.6;">
           {{ content }}
         </section>
 
