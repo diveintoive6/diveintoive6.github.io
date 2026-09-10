@@ -1,0 +1,11 @@
+{% if page.categories %}
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    {% for category in page.categories %}
+      <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+        <a href="{{ site.category_archive.path | relative_url }}#{{ category | slugify }}" class="page__taxonomy-item" itemprop="url" rel="tag">{{ category }}</a>
+      </span>
+      {% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  </p>
+{% endif %}
