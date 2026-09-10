@@ -1,0 +1,14 @@
+<div class="sidebar__box">
+  <h2 class="sidebar__title">카테고리</h2>
+  <ul class="taxonomy__index">
+    {% assign categories_list = site.categories | sort %}
+    {% for item in categories_list %}
+      {% assign list_item = item[0] %}
+      <li>
+        <a href="{{ site.category_archive.path | relative_url }}#{{ list_item | slugify }}">
+          <strong>{{ list_item }}</strong> <span class="taxonomy__count">{{ item[1].size }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
