@@ -1,6 +1,6 @@
 ---
 
-## layout: single
+layout: single
 title: "머신러닝 데이터의 비밀: 훈련/검증/테스트 세트의 의미부터 교차 검증의 함정과 데이터 오류의 위험성"
 date: 2026-02-06 01:10:00 +0900
 classes: wide
