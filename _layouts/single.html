@@ -15,9 +15,13 @@ layout: default
 {% endif %}
 
 <style>
-  /* 모바일 화면(768px 이하)에서 강제 좌우 여백 부여 */
+  /* 모바일 화면(768px 이하)에서 내부 감싸는 박스에 좌우 여백 강제 적용 */
   @media screen and (max-width: 768px) {
-    div#main.wide {
+    #main.wide {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    .page__inner-wrap {
       padding-left: 20px !important;
       padding-right: 20px !important;
       box-sizing: border-box !important;
