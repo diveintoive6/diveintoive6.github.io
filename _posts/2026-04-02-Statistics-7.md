@@ -3,7 +3,7 @@
 layout: post
 title: "부스팅 알고리즘 삼대장 비교: XGBoost vs LightGBM vs CatBoost"
 date: 2026-09-11 17:00:00 +0900
-categories: [Machine Learning, Ensemble]
+categories: [데이터 분석 & 통계 (Statistics)]
 tags: [XGBoost, LightGBM, CatBoost, Gradient Boosting, 머신러닝]
 
 ---
