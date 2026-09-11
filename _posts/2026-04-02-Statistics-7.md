@@ -1,10 +1,12 @@
 ---
 
-layout: single
+layout: post
 title: "부스팅 알고리즘 삼대장 비교: XGBoost vs LightGBM vs CatBoost"
 date: 2026-09-11 17:00:00 +0900
 categories: [Machine Learning, Ensemble]
 tags: [XGBoost, LightGBM, CatBoost, Gradient Boosting, 머신러닝]
+
+---
 
 정형 데이터 분석 및 캐글(Kaggle) 경진대회에서 압도적인 성능을 자랑하는 그래디언트 부스팅(Gradient Boosting) 기반의 머신러닝 모델 3대장, **XGBoost**, **LightGBM**, **CatBoost**의 핵심 메커니즘과 장단점을 심층적으로 비교해 봅니다.
 
