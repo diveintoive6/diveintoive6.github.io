@@ -1,8 +1,8 @@
 ---
 
-## layout: single
+layout: single
 title: "머신러닝·통계 총정리: 다항회귀(Polynomial Regression), 회귀식, 회귀계수, 그리고 R²(결정계수)의 의미"
-date: 2026-02-06 01:00:00 +0900
+date: 2026-03-30 21:05:00 +0900
 classes: wide
 categories: [데이터 분석 & 통계 (Statistics)]
 tags: [Python, Statistics, Regression, PolynomialRegression, R-squared]
